@@ -1,21 +1,4 @@
-import { useMemo } from "react";
-
-function Header({ cart, removeElementFromCart, increaseQuantity, decreaseQuantity, clearCart }) {
-    /*Lo que escriba afuera del return puede ser 
-    - State o funciones 
-    - Variables
-    - Codigo js*/
-
-    //*state derivado, (uso esto para no depender de carrito para saber si esta vacio o no)
-
-    // const isEmpty = () => cart.length === 0;
-    // const totalCost = cart.reduce((total, item)=> total + (item.price * item.quantity), 0)
-
-    //Usando useMemo-------------
-    //hazo el cambio cada que "cart" cambie (hace que isEmpty no sea una funcion)
-    const isEmpty = useMemo(() => cart.length === 0, [cart]);
-    const totalCost = useMemo(() => cart.reduce((total, item) => total + (item.price * item.quantity), 0))
-
+function Header({ cart, removeElementFromCart, increaseQuantity, decreaseQuantity, clearCart, isEmpty, totalCost }) {
 
     //Todo lo que coloque en el return se mostrara en el html
     return (
