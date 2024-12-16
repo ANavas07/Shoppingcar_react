@@ -12,7 +12,7 @@ function App() {
     return localStorageCart ? JSON.parse(localStorageCart): [];
   }
 
-  //state test para probar el carrito
+  //state test para probar el carrito de compras, practica CI/CD
   const [data, setData] = useState(db);
   const [cart, setCart] = useState(initialCart);
   const MAX_ITEMS=5;
